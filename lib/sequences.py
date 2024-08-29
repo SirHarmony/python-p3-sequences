@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 
-def fibonacci(length):
-    fib_sequence = [0,1]
-    while len(fib_sequence) < length:
-        fib_sequence.append(fib_sequence[-1]) + fib_sequence[-2]
-    return fib_sequence
-
 def print_fibonacci(length):
-    fib_sequence = fibonacci(length)
-    if length == 0:
-        print([])
-    elif length == 1:
-        print([fib_sequence[0]])
-    else:
-        print(fib_sequence)
+    fibonacci_list = []
+
+    for i in range(length):
+        if i == 0:
+            fibonacci_list.append(0)
+        elif i == 1:
+            fibonacci_list.append(1)
+        else:
+            fibonacci_list.append(fibonacci_list[-1] + fibonacci_list[-2])
+    print(fibonacci_list)
+
+print_fibonacci(9)
